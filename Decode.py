@@ -1,23 +1,35 @@
 from PIL import Image
 
+image_path = 'Sample/Encode.png'  # Pfad zu deinem Bild
 image = Image.open("Sample/Encode.png")
+
+def count_non_white_pixels(image):
+    width, height = image.size
+    non_white_pixel_count = 0
+    image = image.convert("RGB")
+
+    for x in range(width):
+        for y in range(height):
+            r, g, b = image.getpixel((x, y))
+            if (r, g, b) != (255, 255, 255):
+                non_white_pixel_count += 1
+
+    return non_white_pixel_count
+
+non_white_pixels = count_non_white_pixels(image)
 
 width, height = image.size
 
-header_bytes = bytearray()
 for i in range(4):
     x = i % width
     y = i // width
     r, g, b = image.getpixel((x, y))
-    header_bytes.extend([r, g, b])
 
-# Berechne file_length basierend auf Bildgröße und Pixelanzahl
-total_pixels = width * height
-file_length = min(total_pixels * 3 - 12, 182)  # 12 Bytes für das Header-Segment
 
-# Prüfen, ob file_length durch 3 teilbar ist
+file_length = min(non_white_pixels * 3, 182) 
+
 if file_length % 3 != 0:
-    file_length -= file_length % 3  # auf die nächste kleinere durch 3 teilbare Zahl runden
+    file_length -= file_length % 3  
 
 decoded_bytes = []
 
@@ -30,10 +42,12 @@ for i in range(4, (file_length // 3) + 4):
     else:
         break
 
-# Nur die ersten file_length Bytes verwenden
 decoded_bytes = bytes(decoded_bytes[:file_length])
 
 with open("Sample/Decode.txt", "wb") as f:
     f.write(decoded_bytes)
+
+print(non_white_pixels)
+
 
 print("Decodierung abgeschlossen, Datei gespeichert.")
