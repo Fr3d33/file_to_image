@@ -20,20 +20,11 @@ non_white_pixels = count_non_white_pixels(image)
 
 width, height = image.size
 
-for i in range(4):
-    x = i % width
-    y = i // width
-    r, g, b = image.getpixel((x, y))
-
-
-file_length = min(non_white_pixels * 3, 182) 
-
-if file_length % 3 != 0:
-    file_length -= file_length % 3  
+file_length = non_white_pixels * 3
 
 decoded_bytes = []
 
-for i in range(4, (file_length // 3) + 4):
+for i in range(file_length // 3):
     x = i % width
     y = i // width
     if y < height:
@@ -42,12 +33,12 @@ for i in range(4, (file_length // 3) + 4):
     else:
         break
 
-decoded_bytes = bytes(decoded_bytes[:file_length])
+decoded_bytes = bytes(decoded_bytes)
+
+decoded_bytes = decoded_bytes.rstrip(b'\x00')
 
 with open("Sample/Decode.txt", "wb") as f:
     f.write(decoded_bytes)
 
 print(non_white_pixels)
-
-
 print("Decodierung abgeschlossen, Datei gespeichert.")
