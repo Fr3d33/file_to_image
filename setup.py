@@ -18,15 +18,15 @@ with open(os.path.join(here, 'requirements.txt'), encoding='utf-8') as f:
 setup(
     name="file-to-image",
     version="1.0.0",
-    author="File to Image Project",
-    author_email="your.email@example.com",
+    author="Fr3d33",
+    author_email="frederikkoch@proton.me",
     description="Encode any file into an image and decode it back perfectly",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/file-to-image",
+    url="https://github.com/Fr3d33/file-to-image",
     project_urls={
-        "Bug Reports": "https://github.com/yourusername/file-to-image/issues",
-        "Source": "https://github.com/yourusername/file-to-image",
+        "Bug Reports": "https://github.com/Fr3d33/file-to-image/issues",
+        "Source": "https://github.com/Fr3d33/file-to-image",
     },
     classifiers=[
         "Development Status :: 5 - Production/Stable",

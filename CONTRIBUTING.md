@@ -5,7 +5,7 @@ Thank you for your interest in contributing to this project! We welcome contribu
 ## 🚀 Quick Start
 
 1. **Fork** the repository
-2. **Clone** your fork: `git clone https://github.com/yourusername/file-to-image.git`
+2. **Clone** your fork: `git clone https://github.com/Fr3d33/file-to-image.git`
 3. **Install** dependencies: `pip install -r requirements.txt`
 4. **Create** a new branch: `git checkout -b feature/your-feature-name`
 5. **Make** your changes
@@ -90,7 +90,7 @@ For new feature requests:
 ### Local Development
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/file-to-image.git
+git clone https://github.com/Fr3d33/file-to-image.git
 cd file-to-image
 
 # Create virtual environment (optional but recommended)
@@ -193,7 +193,7 @@ Contributors will be recognized in:
 
 ## ❓ Questions?
 
-- Check existing [Issues](https://github.com/yourusername/file-to-image/issues)
+- Check existing [Issues](https://github.com/Fr3d33/file-to-image/issues)
 - Create a new issue with the "question" label
 - Review the [README.md](README.md) for basic usage
 

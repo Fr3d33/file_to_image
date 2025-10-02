@@ -21,7 +21,7 @@ A Python application that encodes binary data from any file into an image and de
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/file-to-image.git
+   git clone https://github.com/Fr3d33/file-to-image.git
    cd file-to-image
    ```
 
@@ -185,7 +185,7 @@ This tool is for educational and legitimate purposes only. Users are responsible
 
 If you encounter any issues or have questions:
 
-1. Check the [Issues](https://github.com/yourusername/file-to-image/issues) page for existing solutions
+1. 1. Check the [Issues](https://github.com/Fr3d33/file-to-image/issues) page for existing solutions
 2. Create a new issue if your problem hasn't been addressed
 3. Provide detailed information including error messages and steps to reproduce
 
